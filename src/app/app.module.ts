@@ -7,6 +7,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { LayoutModule } from './core/layout/layout.module';
 import { AuthInterceptor } from './core/auth/auth.interceptor';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { AuthInterceptor } from './core/auth/auth.interceptor';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    LayoutModule
+    LayoutModule,
+    SharedModule
   ],
   providers: [
     {
