@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { LayoutModule } from './core/layout/layout.module';
+import { AuthInterceptor } from './core/auth/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,11 @@ import { LayoutModule } from './core/layout/layout.module';
     FormsModule,
     LayoutModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
